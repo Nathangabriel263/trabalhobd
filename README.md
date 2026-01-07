@@ -30,6 +30,9 @@ REVOKE DELETE ON escola_db.* FROM 'usuario_operacao'@'localhost';
 -- Aplicar novamente
 FLUSH PRIVILEGES;
 
+CREATE database Escola
+USE Escola;
+
 CREATE TABLE cursos (
     id INT PRIMARY KEY,
     nome VARCHAR(100),
@@ -42,11 +45,6 @@ CREATE TABLE professor (
     telefone VARCHAR(50)
 );
 
-CREATE TABLE cursos (
-    id INT PRIMARY KEY,
-    nome VARCHAR(100),
-    tempo INT
-);
 
 CREATE TABLE disciplina (
     id INT PRIMARY KEY,
@@ -61,3 +59,23 @@ CREATE TABLE alunos (
     idade INT,
     telefone VARCHAR(50)
     turma VARCHAR(50)
+    );
+
+ INSERT INTO cursos (id, nome, tempo) VALUES
+    (1, 'Informática', 24),
+    (2, 'Administração', 18),
+    (3, 'Eletrotécnica', 36);
+  INSERT INTO professor (id, nome, idade, telefone) VALUES
+(1, 'Marcos Oliveira', 40, '(11) 95555-1111'),
+(2, 'Fernanda Lima', 35, '(11) 94444-2222'),
+(3, 'Rafael Santos', 50, '(11) 93333-3333');
+INSERT INTO disciplina (id, nome, tempo) VALUES
+(1, 'Banco de Dados', 60),
+(2, 'Programação', 80),
+(3, 'Redes de Computadores', 50),
+(4, 'Gestão Empresarial', 40);
+INSERT INTO alunos (id, nome, cpf, idade, telefone) VALUES
+(1, 'Ana Silva', '12345678901', 20, '(11) 99999-1111','A'),
+(2, 'Bruno Costa', '23456789012', 22, '(11) 98888-2222','B'),
+(3, 'Carla Souza', '34567890123', 19, '(11) 97777-3333','A'),
+(4, 'Diego Pereira', '45678901234', 25, '(11) 96666-4444','B');
