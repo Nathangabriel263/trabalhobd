@@ -29,3 +29,35 @@ REVOKE DELETE ON escola_db.* FROM 'usuario_operacao'@'localhost';
 
 -- Aplicar novamente
 FLUSH PRIVILEGES;
+
+CREATE TABLE cursos (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100),
+    tempo INT
+
+CREATE TABLE professor (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100),
+    idade INT,
+    telefone VARCHAR(50)
+);
+
+CREATE TABLE cursos (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100),
+    tempo INT
+);
+
+CREATE TABLE disciplina (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100),
+    tempo INT
+);
+
+CREATE TABLE alunos (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100),
+    cpf VARCHAR(11),
+    idade INT,
+    telefone VARCHAR(50)
+    turma VARCHAR(50)
