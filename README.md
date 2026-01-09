@@ -30,7 +30,7 @@ REVOKE DELETE ON escola_db.* FROM 'usuario_operacao'@'localhost';
 -- Aplicar novamente
 FLUSH PRIVILEGES;
 
-CREATE database Escola
+CREATE database Escola_bd
 USE Escola;
 
 CREATE TABLE cursos (
@@ -79,3 +79,4 @@ INSERT INTO alunos (id, nome, cpf, idade, telefone) VALUES
 (2, 'Bruno Costa', '23456789012', 22, '(11) 98888-2222','B'),
 (3, 'Carla Souza', '34567890123', 19, '(11) 97777-3333','A'),
 (4, 'Diego Pereira', '45678901234', 25, '(11) 96666-4444','B');
+
