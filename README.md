@@ -1,3 +1,33 @@
+CREATE database Escola_bd
+USE Escola;
+
+CREATE TABLE cursos (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100),
+    tempo INT
+
+CREATE TABLE professor (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100),
+    idade INT,
+    telefone VARCHAR(50)
+);
+
+
+CREATE TABLE disciplina (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100),
+    tempo INT
+);
+
+CREATE TABLE alunos (
+    id INT PRIMARY KEY,
+    nome VARCHAR(100),
+    cpf VARCHAR(11),
+    idade INT,
+    telefone VARCHAR(50)
+    turma VARCHAR(50)
+    );
 # trabalhobd
 -- =========================================
 -- DCL - SEGURANÇA DO BANCO DE DADOS
@@ -30,37 +60,6 @@ REVOKE DELETE ON escola_db.* FROM 'usuario_operacao'@'localhost';
 -- Aplicar novamente
 FLUSH PRIVILEGES;
 
-CREATE database Escola_bd
-USE Escola;
-
-CREATE TABLE cursos (
-    id INT PRIMARY KEY,
-    nome VARCHAR(100),
-    tempo INT
-
-CREATE TABLE professor (
-    id INT PRIMARY KEY,
-    nome VARCHAR(100),
-    idade INT,
-    telefone VARCHAR(50)
-);
-
-
-CREATE TABLE disciplina (
-    id INT PRIMARY KEY,
-    nome VARCHAR(100),
-    tempo INT
-);
-
-CREATE TABLE alunos (
-    id INT PRIMARY KEY,
-    nome VARCHAR(100),
-    cpf VARCHAR(11),
-    idade INT,
-    telefone VARCHAR(50)
-    turma VARCHAR(50)
-    );
-
  INSERT INTO cursos (id, nome, tempo) VALUES
     (1, 'Informática', 24),
     (2, 'Administração', 18),
@@ -79,4 +78,11 @@ INSERT INTO alunos (id, nome, cpf, idade, telefone) VALUES
 (2, 'Bruno Costa', '23456789012', 22, '(11) 98888-2222','B'),
 (3, 'Carla Souza', '34567890123', 19, '(11) 97777-3333','A'),
 (4, 'Diego Pereira', '45678901234', 25, '(11) 96666-4444','B');
+
+UPDATE disciplina SET tempo = 100 WHERE nome = 'programação';
+
+DELETE FROM professor WHERE nome = 'Fernanda Lima';
+
+SELECT Ana Silva turma A FROM alunos INNER JOIN turma A
+
 
