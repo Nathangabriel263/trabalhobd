@@ -79,10 +79,25 @@ INSERT INTO alunos (id, nome, cpf, idade, telefone) VALUES
 (3, 'Carla Souza', '34567890123', 19, '(11) 97777-3333','A'),
 (4, 'Diego Pereira', '45678901234', 25, '(11) 96666-4444','B');
 
-UPDATE disciplina SET tempo = 100 WHERE nome = 'programação';
+SELECT * FROM alunos;
 
-DELETE FROM professor WHERE nome = 'Fernanda Lima';
 
-SELECT Ana Silva turma A FROM alunos INNER JOIN turma A
 
+UPDATE disciplina
+SET tempo = 100
+WHERE nome = 'Programação';
+
+
+DELETE FROM alunos
+WHERE turma = 'B';
+
+SELECT 
+    alunos.nome AS aluno,
+    cursos.nome AS curso,
+    disciplina.nome AS disciplina
+FROM alunos
+INNER JOIN cursos 
+    ON alunos.id_curso = cursos.id
+INNER JOIN disciplina
+    ON disciplina.id_curso = cursos.id;
 
